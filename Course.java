@@ -1,5 +1,6 @@
 package DS_assignment10;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -53,28 +54,18 @@ public class Course {
     public Map<String, Course> idCourse(List<Course> courseList){
 
         Map<String, Course> mapCourse = new HashMap<>();
+        List<String> courseId = new ArrayList<>();
 
-        for(int i = 0; i < courseList.size(); i++){
-            mapCourse.put(courseList.get(i).cID, courseList.get(i));
-
+        //todo adding the name of the course to list
+        for(int i = 0; i < courseList.size(); i++) {
+            courseId.add(courseList.get(i).cID);
         }
+        //todo maping the course
+        for(int i =  0; i < courseList.size(); i++){
+            mapCourse.put(courseId.get(i), courseList.get(i));
+        }
+
     return mapCourse;
     }
 
-//    public static void main(String[] args) {
-//
-//        Course c1 = new Course("CS221","Ds",4);
-//        Course c2 = new Course("CS105","Ds",4);
-//        Course c3 = new Course("CS203","Ds",4);
-//        Course c4 = new Course("CS201","Ds",4);
-//
-//        List<Course> courseList = new ArrayList<>();
-//
-//        courseList.add(c1);
-//        courseList.add(c2);
-//        courseList.add(c3);
-//        courseList.add(c4);
-//
-//        System.out.println( idCourse(courseList));
-//    }
 }
