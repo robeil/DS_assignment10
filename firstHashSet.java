@@ -41,20 +41,29 @@ public class firstHashSet<E> {
     }
 
     //todo concatenating two array list in one
-    public List<E> concatenating(List<String> list, List<Integer> num){
+    public Map<String,Integer> concatenating(List<String> nameList, List<Integer> numList){
 
-        return null;
+        Map<String,Integer> concat = new HashMap<>();
+
+        for(int i = 0; i < nameList.size(); i++){
+            concat.put(nameList.get(i),numList.get(i));
+        }
+
+        return concat;
     }
-
-
-    //todo method that create course that object
 
     public static void main(String[] args) {
 
         firstHashSet myHashTag = new firstHashSet();
         List<String> list = Arrays.asList("Dean","Zaineh","Yasmeen","Dave");
+        List<String> nameList = Arrays.asList("Dean","Dave","Zaineh");
+        List<Integer> numList = Arrays.asList(90,80,94);
+
 
         System.out.println(myHashTag.removeDuplicate(list));
         System.out.println(myHashTag.countNotRepeatedValue(list));
+        System.out.println(myHashTag.concatenating(nameList, numList));
+
+
     }
 }
