@@ -64,6 +64,21 @@ public class firstHashSet<E> {
         System.out.println(myHashTag.countNotRepeatedValue(list));
         System.out.println(myHashTag.concatenating(nameList, numList));
 
+        //todo 4th Question
+        Course first = new Course();
+        Course c1 = new Course("CS221","Data Structure ",4);
+        Course c2 = new Course("CS105","Problem Solving ",4);
+        Course c3 = new Course("CS203","Object Oriented",4);
+        Course c4 = new Course("CS201","Procedural Programming",4);
 
+
+        List<Course> courseList = new ArrayList<>();
+
+        courseList.add(c1);
+        courseList.add(c2);
+        courseList.add(c3);
+        courseList.add(c4);
+
+        System.out.println( first.idCourse(courseList));
     }
 }
