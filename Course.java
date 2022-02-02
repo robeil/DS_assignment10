@@ -1,6 +1,5 @@
 package DS_assignment10;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -46,24 +45,17 @@ public class Course {
 
     @Override
     public String toString() {
-        return " Course " + cName ;
+        return "[ "+cID + '\''+" , " + cName + '\''+" ]";
     }
 
 
     //todo method that concatenating course object with id
-    public Map<String, Course> idCourse(List<Course> courseList){
+    public Map<String, String> idCourse(List<Course> courseList){
 
-        Map<String, Course> mapCourse = new HashMap<>();
-        List<String> courseId = new ArrayList<>();
-
-        //todo adding the name of the course to list
-        for(int i = 0; i < courseList.size(); i++) {
-            courseId.add(courseList.get(i).cID);
-        }
-        //todo maping the course
-        for(int i =  0; i < courseList.size(); i++){
-            mapCourse.put(courseId.get(i), courseList.get(i));
-        }
+        Map<String, String> mapCourse = new HashMap<>();
+       for(int i = 0; i < courseList.size(); i++){
+           mapCourse.put(courseList.get(i).cID, courseList.get(i).cName);
+       }
 
     return mapCourse;
     }
